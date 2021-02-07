@@ -31,12 +31,12 @@ export default class NewClass extends cc.Component {
      * 两个碰撞体开始接触时被调用一次
      */
     onBeginContact(contact, self: cc.Component, other: cc.Component) {
-        console.log('碰撞')
+        // console.log('碰撞')
         if (self.node && other.node) {
             const s = self.node.getComponent('fruit');
             const o = other.node.getComponent('fruit');
             if (s && o && s.id === o.id) {
-                console.log('一样的水果')
+                // console.log('一样的水果')
                 self.node.emit('sameContact', {self, other})
             }
         }

@@ -85,14 +85,11 @@ export default class NewClass extends cc.Component {
         // 物理引擎
         const manager = cc.director.getPhysicsManager();
         manager.enabled = true;
-        manager.gravity = cc.v2(0, -960);
+        manager.gravity = cc.v2(0, -1260);
 
         // 碰撞检测
         const collisionManager = cc.director.getCollisionManager();
         collisionManager.enabled = true;
-        // 显示包围盒
-        collisionManager.enabledDebugDraw = true;
-        collisionManager.enabledDrawBoundingBox = true;
     }
 
     onTouchStart(event) {
@@ -170,7 +167,7 @@ export default class NewClass extends cc.Component {
      * @param num 水果id
      */
     createOneFruit(num: number) {
-        console.log('生成水果')
+        // console.log('生成水果')
         let fruit = cc.instantiate(this.fruitPrefab);
         // 获取水果配置信息
         const config = this.fruits[num - 1];
